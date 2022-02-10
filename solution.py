@@ -26,7 +26,8 @@ def webServer(port=13331):
         outputdata = f.read()
         
         #Send one HTTP header line into socket.
-        connectionSocket.send('HTTP/1.1 200 OK')
+        sentence = input('Input lowercase sentences:')
+        connectionSocket.send(sentence.encode())
 
         #Send the content of the requested file to the client
         for i in range(0, len(outputdata)):
